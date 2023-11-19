@@ -1,0 +1,556 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background: linear-gradient(#200016,#10001f);
+    /*bach i5alat zouz alwan */
+    height:100%;
+    /*toul bach ikoun bitou checha ya3ni mathamach repeat*/
+    font-family: system-ui;
+}
+a{
+    text-decoration: none;
+    /*bach inahi 5at ili taht lien */
+    color:#fff;
+}
+header{
+    position:absolute;
+    width:95%;
+    z-index:10;
+    display:flex;
+    justify-content:space-between;
+    /*bach galaxy ta93ad 3al limin w lo5rin yemchiw 3al lisar*/
+    align-items:center;
+    /*bach tahbat chwaya*/
+    margin:30px;
+}
+header .logo{
+    font-size:30px;
+    text-transform: uppercase;
+    /*bach ihawelha majuscule*/
+}
+
+header ul{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    list-style: none;
+    /*bach tnahi no9at kahla*/
+}
+.sun ul li{
+    list-style: none;
+    margin: 14px 0;
+}
+.sun ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    background: darkblue;
+    padding: 6px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    text-transform: uppercase;
+    width:120px;
+    transition:0.5s ;
+    position: relative;
+    z-index: 10;
+}
+.sun ul:hover li a{
+    opacity: 0;
+    /*ki ta3mel hover 3ala wahda lo5rin ya5tafiw*/
+} 
+.sun ul li a:hover{
+    transform:scale(1.5);
+    /*wa9t ya3mel hover 9ars yekber*/
+    background: darkmagenta;
+    opacity: 1;
+    /*5aliha to4her*/
+}
+.sun ul li::after{
+    content:attr(data-text);
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    /*top: 50%;*/
+    transform: translate(-50%,-50%);
+    /*.............(l'axe des abcisses,l'axe y)*/
+    font-weight: 900;
+    font-size: 80px;
+    text-transform: uppercase;
+    opacity: 0;
+    letter-spacing: 50px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.sun ul li:hover:after{
+    opacity:0.5;
+    letter-spacing: 5px;
+}
+#Mar::before{
+    content:url("img/mars.png");
+    width:180px;
+    height: 80px;
+    position: absolute;
+    /*left:50%;*/
+    transform: translate(-200%,200%);
+    border-radius: 50% ;
+    /*box-shadow: orangered;*/
+    opacity: 0;
+    transition: 0.5s;
+}
+#Mar:hover::before{
+    opacity:0.5;
+    width:80px;
+}
+#Mer::before{
+    content:url("img/mer.png");
+    width:180px;
+    height: 80px;
+    position: absolute;
+    /*left:50%;*/
+    transform: translate(-200%,200%);
+    border-radius: 50% ;
+    /*box-shadow: orangered;*/
+    opacity: 0;
+    transition: 0.5s;
+}
+#Mer:hover::before{
+    opacity:0.5;
+    width:80px;
+}
+#ear::before{
+    content:url("img/earth.png");
+    width:180px;
+    height: 80px;
+    position: absolute;
+    /*left:50%;*/
+    transform: translate(-200%,200%);
+    border-radius: 50% ;
+    /*box-shadow: orangered;*/
+    opacity: 0;
+    transition: 0.5s;
+}
+#ear:hover::before{
+    opacity:0.5;
+    width:80px;
+}
+#jup::before{
+    content:url("img/jup.png");
+    width:180px;
+    height: 80px;
+    position: absolute;
+    /*left:50%;*/
+    transform: translate(-200%,200%);
+    border-radius: 50% ;
+    /*box-shadow: orangered;*/
+    opacity: 0;
+    transition: 0.5s;
+}
+#jup:hover::before{
+    opacity:0.5;
+    width:80px;
+}
+#Sat::before{
+    content:url("img/sat.png");
+    width:180px;
+    height: 80px;
+    position: absolute;
+    /*left:50%;*/
+    transform: translate(-200%,200%);
+    border-radius: 50% ;
+    /*box-shadow: orangered;*/
+    opacity: 0;
+    transition: 0.5s;
+}
+#Sat:hover::before{
+    opacity:0.5;
+    width:80px;
+}
+#ven::before{
+    content:url("img/ven.png");
+    width:180px;
+    height: 80px;
+    position: absolute;
+    /*left:50%;*/
+    transform: translate(-200%,200%);
+    border-radius: 50% ;
+    /*box-shadow: orangered;*/
+    opacity: 0;
+    transition: 0.5s;
+}
+#ven:hover::before{
+    opacity:0.5;
+    width:80px;
+}
+#nep::before{
+    content:url("img/nep.png");
+    width:180px;
+    height: 80px;
+    position: absolute;
+    /*left:50%;*/
+    transform: translate(-200%,200%);
+    border-radius: 50% ;
+    /*box-shadow: orangered;*/
+    opacity: 0;
+    transition: 0.5s;
+}
+#nep:hover::before{
+    opacity:0.5;
+    width:80px;
+}
+
+header ul li{ 
+    margin-right:30px;
+}
+header ul li a{
+    padding:6px 15px;
+    border-radius:20px;
+    /*a3melna padding he4i 5ater hover*/
+}
+header ul li a:hover, .active{
+    /*ya3ni ta2thir he4a hotou 3al hover w active*/
+    background:#fff;
+    color:#200016;
+    
+}
+.main{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display:flex;
+    justify-content:center;
+    overflow:hidden;
+}
+#stars{
+    /*transform:translateY(-80px);*/
+}
+.main img{
+    position: absolute;
+    width:100%;
+    height:100vh;
+    /*object-fit: cover;*/
+}
+#moon{
+    mix-blend-mode: screen;
+    transform:translateY(80px);
+}
+.space{
+    color: #fff;
+    font-size: 25px;
+    text-transform: uppercase;
+    transform:translateY(-140px);
+    /* a3tina valeur négative bach tetla3 w kol matekber valeur négative kol mayetla3*/
+}
+.content{
+    color:#fff;
+    padding:30px;
+    /*bottom:0;
+    background: linear-gradient(to top,#200016,transparent) ;*/
+}
+.content h2{
+    margin:20px;
+    font-size: 30px;
+}
+.content p{
+    margin:20px;
+    
+}
+.main::after{
+    /*ili mich iji ba3d main*/
+    content:'';
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(to top,#200016,transparent) ;
+}
+/*div::before{
+    /*ili mich iji ba3d main
+    content:'';
+    position: absolute;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(to buttom,#200016,transparent) ;
+
+   
+}*/
+#mk{
+  margin-left: 60px; 
+  border-radius: 50px;
+}
+#ml{
+   height:380px; 
+   margin-left:60px;
+   width:40%;
+   border-radius: 50px;
+}
+#ra{
+    margin-left: 400px;
+    border-radius: 50px;
+}
+/*div{
+    background: linear-gradient(#10001f,#200016) ;
+    height:100vh;
+}*/
+.sun{
+    /*background: url('img/stars1.png');*/
+    height:160vh;
+    display:flex;
+    justify-content: center;
+    /*iheb i5aliha tji fil wost 3al l'axe des ordonnée*/
+    align-items: center;
+    /*iheb i5aliha tji fil wost 3al l'axe des abscisses*/
+
+
+}
+#mpi{
+    text-align: center;
+    margin-bottom: 350px;
+}
+#kou{
+    margin:20px;
+    font-size: 50px;
+    color:#fff;
+    padding:30px;
+}
+aside {
+    align-items: left;
+    /*background-color: #000;*/
+    display: flex;
+    justify-content: left;
+    margin-left: 10%;
+    height: 100vh;
+    /*margin-bottom: 1000px;*/
+}
+  
+.form {
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 500px;
+    padding: 20px;
+    width: 320px;
+  }
+  
+  .title {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 30px;
+  }
+  
+  .subtitle {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  
+  .input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .ic1 {
+    margin-top: 40px;
+  }
+  
+  .ic2 {
+    margin-top: 30px;
+  }
+  
+  .input {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+  }
+  
+  .cut {
+    background-color: #15172b;
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 76px;
+  }
+  
+  .cut-short {
+    width: 50px;
+  }
+  
+  .input:focus ~ .cut,
+  .input:not(:placeholder-shown) ~ .cut {
+    transform: translateY(8px);
+  }
+  
+  .placeholder {
+    color: #65657b;
+    font-family: sans-serif;
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 20px;
+  }
+  
+  .input:focus ~ .placeholder,
+  .input:not(:placeholder-shown) ~ .placeholder {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+  }
+  
+  .input:not(:placeholder-shown) ~ .placeholder {
+    color: #808097;
+  }
+  
+  .input:focus ~ .placeholder {
+    color: #dc2f55;
+  }
+  
+  .submit {
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 38px;
+    outline: 0;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .submit:active {
+    background-color: #06b;
+  }
+  #m15{
+    width: 600px;
+    /*height: 400px;*/
+    margin-left: 10%;
+    margin-bottom: 200px;
+  }
+  section{
+    background: url('img/stars1.png');
+  }
+/*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}*/
+footer{
+    /*background: #fcfcfc;*/
+    position: absolute;
+    /*bottom: 0;*/
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+    width: 100vw;
+    font-family: "Open Sans";
+    padding-top: 40px;
+    color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+
+}
+.socials a:hover i{
+    color: aqua;
+}
+
+.footer-bottom{
+    background: #000;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+.info{
+        color:#fff;
+        padding:30px;
+        /*bottom:0;
+        background: linear-gradient(to top,#200016,transparent) ;*/
+}
+/*.content h2{
+        margin:20px;
+        font-size: 30px;
+}*/
+#mk2{
+    margin-left: 60px; 
+    border-radius: 50px;
+}
+#kou2{
+    /*margin:20px;*/
+    font-size: 50px;
+    color:#fff;
+    padding:30px;}
+.info p{
+        margin:20px;
+
+}
+h3{
+    padding-left:30px;
+}
